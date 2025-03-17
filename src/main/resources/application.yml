@@ -2,8 +2,8 @@ spring:
  cloud:
    gateway:
      routes:
-       - id: swiggy-app
-         uri: lb://SWIGGY-APP
+       - id: user-app
+         uri: lb://user-app
          predicates:
            - Path=/jewel/**
 
