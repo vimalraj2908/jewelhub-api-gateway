@@ -1,0 +1,25 @@
+spring:
+ cloud:
+   gateway:
+     routes:
+       - id: user-app
+         uri: lb://user-app
+         predicates:
+           - Path=/jewel/**
+
+
+
+       - id: order-service
+         uri: lb://ORDER-SERVICE
+         predicates:
+           - Path=/order/**
+
+
+ application:
+   name: API-GATEWAY
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone : http://localhost:8761/eureka/
